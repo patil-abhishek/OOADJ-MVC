@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User Record</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 30px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color: #007bff;
+        }
+        label {
+            font-weight: bold;
+        }
+        button[type="submit"] {
+            margin-top: 20px;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        button[type="submit"]:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        a {
+            color: #28a745 !important;
+            margin-right: 20px;
+            border: 1px solid #28a745;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        a:hover {
+          color: #ffffff !important;
+          background-color: #28a745;
+          border-color: #28a745;
+          text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Add User Record</h1>
+    <form action="#" th:action="@{/add-user}" method="POST" th:object="${user}">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" th:field = "*{name}" class="form-control" id="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" th:field = "*{email}" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label>Phone:</label>
+            <input type="text" th:field = "*{phone}" class="form-control" id="phone" placeholder="Enter phone">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <div class="text-center mt-3">
+        <a href="/">View Users</a>
+    </div>
+</div>
+</body>
+</html>
